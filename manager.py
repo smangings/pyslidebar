@@ -22,16 +22,16 @@ class Manager:
 		self.sb.reverse()
 		self.sb.setPosition(0.0)
 
-		# Creating the plugins
-		if self.has_typewriter:
-			self.typewriter = typewriter.TypeWriter(self.sb)
-			self.typewriter.init()
+		# # Creating the plugins
+		# if self.has_typewriter:
+		# 	self.typewriter = typewriter.TypeWriter(self.sb)
+		# 	self.typewriter.init()
 
 		if self.has_volume:
 			self.volume = volume.Volume(self.sb)
 
 		# Booleans to know which plugins are active
-		self.is_active_typewriter = True
+		self.is_active_typewriter = False
 		self.is_active_volume = False
 
 
@@ -73,6 +73,7 @@ def kbevent_down(event):
 	'''
 	Function called whenever a key is pressed
 	'''
+	print(event)
 	global manager
 	manager.keydown(event)
 

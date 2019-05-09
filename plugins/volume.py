@@ -17,6 +17,7 @@ class Volume:
         command = ["./plugins/getVolume.sh"]
         a = subprocess.Popen(command, stdout=PIPE, stderr=PIPE)
         (cout, cerr) = a.communicate()
+        print(cout.strip())
         self.curr_volume = int(cout.strip())
 
         # We set the slider at the proper position
@@ -61,7 +62,7 @@ class Volume:
             # (We do that check as the position given by the slidebar changes slightly from time to time)
             elif new_volume > 2 and abs(new_volume - self.curr_volume) > 1:
                 self.setVolume(new_volume)
-                
+
             # We repeat this process at a 60Hz frequency
             time.sleep(1. / 60.)
 

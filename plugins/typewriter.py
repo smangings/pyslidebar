@@ -32,6 +32,7 @@ class TypeWriter:
 			self.sb.moveLeft()
 		# Otherwise, we move right
 		else:
+			print("move right")
 			self.sb.moveRight()
 
 	def keyup(self, event):
